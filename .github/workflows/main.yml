@@ -8,3 +8,11 @@ jobs:
     steps:
       - name: Clone the repo on ubuntu server
         uses: actions/checkout@v4
+      - name: Install Java and Maven on ubuntu server
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+          cache: 'maven'
+      - name: Build the source code on ubuntu server 
+        run: mvn package 
