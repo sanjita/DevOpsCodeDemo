@@ -1,0 +1,10 @@
+name: CICD using Maven and Jenkins
+on: 
+  push:
+  workflow_dispatch:
+jobs:
+  CICDJob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone the repo on ubuntu server
+        uses: actions/checkout@v4
